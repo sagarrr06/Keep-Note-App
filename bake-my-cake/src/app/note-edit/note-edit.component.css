@@ -1,0 +1,13 @@
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 25rem;
+}
+
+h1 {
+  margin-top: 2rem;
+}

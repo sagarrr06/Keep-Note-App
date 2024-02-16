@@ -1,0 +1,50 @@
+<!-- <div class="heading">
+  <p class="para1">{{ navBrand }}</p>
+</div> -->
+
+<div class="heading">
+  <mat-toolbar class="toolbar" color="primary">
+    <a class="nav-heading" routerLink="/">
+    <div class="nav-brand">
+      <span class="para1">{{ navBrand }}</span>
+    </div>
+  </a>
+
+    <span class="example-spacer"></span>
+    <div class="nav-links">
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with home icon"
+      >
+        <mat-icon>home</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with list icon"
+      >
+        <mat-icon>lists</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with settings icon"
+      >
+        <mat-icon>settings</mat-icon>
+      </button>
+      <a *ngIf="!authService.isLoggedIn" routerLink="/register-user" class="add-person">
+        <button mat-icon-button class="example-icon" aria-label="Add person" matTooltip="Register User" (click)="openRegistrationForm()">
+          <mat-icon>person_add</mat-icon>
+        </button>
+      </a>
+      
+      <a class="logout" routerLink="/login">
+         <!-- Display Logout icon when isLoggedIn is true -->
+        <button *ngIf="authService.isLoggedIn" mat-icon-button aria-label="Logout" matTooltip="Logout" (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </a>
+    </div>
+  </mat-toolbar>
+</div>

@@ -1,0 +1,103 @@
+<div *ngIf="showAddNote" class="input-container">
+  <form
+    mat-card
+    id="note-input"
+    (ngSubmit)="onSubmit()"
+    #addNoteForm="ngForm"
+  >
+    <mat-card-content>
+      <h2>Add New Note</h2>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="title"
+          class="input-1"
+          placeholder="Note Title"
+          required
+          [(ngModel)]="note.title"
+          #noteTitle="ngModel"
+        />
+        <mat-error *ngIf="noteTitle.errors?.['required']">
+          Note Title is required
+        </mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <textarea
+          matInput
+          type="text"
+          name="content"
+          class="input-2"
+          placeholder="Note Content"
+          required
+          minlength="5"
+          [(ngModel)]="note.content"
+          #noteContent="ngModel"
+        ></textarea>
+        <mat-error *ngIf="noteContent.errors?.['required']">
+          Note content is required
+        </mat-error>
+        <mat-error *ngIf="noteContent.errors?.['minlength']">
+          Note content Minimum Length is
+          {{ noteContent.errors?.['minlength']?.requiredLength }}
+        </mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          name="reminderDate"
+          placeholder="Choose a date"
+          [(ngModel)]="note.reminderDate"
+          #reminderDate="ngModel"
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="reminderDate.errors?.['required']">
+          Reminder date is required
+        </mat-error>
+      </mat-form-field>
+      <br>
+      
+
+      <mat-form-field>
+        <input
+          matInput
+          name="cateogry"
+          placeholder="Add Category"
+          [(ngModel)]="note.category"
+          #category="ngModel"
+        />
+      </mat-form-field>
+
+      <br>
+
+      <mat-radio-group
+        aria-label="Select an option"
+        name="priority"
+        #priority="ngModel"
+        [(ngModel)]="note.priority"
+      >
+        <mat-label class="mat-label">Priority</mat-label> <br>
+        <mat-radio-button class="radio-btn"  value="Critical">Critical</mat-radio-button>
+        <mat-radio-button class="radio-btn" value="High">High</mat-radio-button>
+        <mat-radio-button class="radio-btn" value="Medium">Medium</mat-radio-button>
+        <mat-radio-button class="radio-btn" value="Low">Low</mat-radio-button>
+      </mat-radio-group>
+
+      <br /> <br>
+      <button class="btn" mat-raised-button color="primary" type="submit">
+        <mat-icon>save</mat-icon>
+      </button>
+    </mat-card-content>
+  </form>
+</div>
+
+<button class="toggleAddNote"  (click)="toggleAddNote()">
+  <mat-icon>add</mat-icon>
+</button>

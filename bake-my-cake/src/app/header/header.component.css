@@ -1,0 +1,18 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .example-spacer {
+  flex: 0 0 auto;
+  width: 75rem;
+} */
+
+.add-person, .logout {
+  color: white;
+}
+
+.nav-heading {
+  text-decoration: none;
+  color: white;
+}

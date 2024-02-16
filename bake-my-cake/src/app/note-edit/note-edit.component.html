@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Edit Note</h1>
+
+  <!-- Display existing note details -->
+  <mat-form-field appearance="fill">
+    <mat-label for="noteTitle">Title:</mat-label>
+    <input
+      matInput
+      type="text"
+      id="noteTitle"
+      placeholder="Note Title"
+      [(ngModel)]="note.title"
+    />
+  </mat-form-field>
+
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label for="noteContent">Content:</mat-label>
+    <textarea
+      matInput
+      id="noteContent"
+      placeholder="Note Content"
+      [(ngModel)]="note.content"
+    ></textarea>
+  </mat-form-field>
+  <br />
+
+  <!-- Save button -->
+  <button mat-raised-button color="accent" (click)="editNote()">Save</button>
+</div>

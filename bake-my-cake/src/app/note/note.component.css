@@ -1,0 +1,46 @@
+/* .note-card {
+  border: 1px solid rgb(26, 149, 149);
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.7rem;
+  box-shadow: 5px 5px 3px rgb(26, 149, 149);
+  display: inline-block;
+} */
+
+.note-card-actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin: 0 0;
+}
+
+.subheading {
+  margin-bottom: 0;
+  font-size: small;
+  font-weight: 400;
+  color: grey;
+}
+
+.category-btn {
+  background-color: rgba(0, 0, 0, 0.114);
+  border-radius: 5rem;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 0.7rem;
+  text-align: center;
+}
+/* 
+.note-content {
+  white-space: pre-line;
+} */

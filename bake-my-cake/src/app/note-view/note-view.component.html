@@ -1,0 +1,16 @@
+<app-search (searchResult)="receiveSearchResults($event)"></app-search>
+
+<app-note-add (noteAdded)="onNoteAdded($event)"></app-note-add>
+
+<div class="container">
+  <div id="note-cards">
+    <app-note
+      class="note-card"
+      *ngFor="let note of notes"
+      [note]="note"
+      (noteSelected)="selectNote($event)"
+      (deleteNote)="deleteNote($event)"
+    >
+    </app-note>
+  </div>
+</div>

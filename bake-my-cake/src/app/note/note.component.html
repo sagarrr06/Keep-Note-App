@@ -1,0 +1,64 @@
+<div class="note-card" (click)="onClick()">
+  <mat-card>
+    <mat-card-header>
+      <div class="head-icons">
+        <button
+          *ngIf="note?.priority === 'Critical'"
+          color="accent"
+          mat-icon-button
+        >
+          <mat-icon>gpp_maybe</mat-icon>
+        </button>
+        <button
+          *ngIf="note?.priority === 'High'"
+          color="accent"
+          mat-icon-button
+        >
+          <mat-icon>arrow_circle_up</mat-icon>
+        </button>
+        <button
+          *ngIf="note?.priority === 'Medium'"
+          color="accent"
+          mat-icon-button
+        >
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+        <button *ngIf="note?.priority === 'Low'" color="accent" mat-icon-button>
+          <mat-icon> arrow_circle_down</mat-icon>
+        </button>
+      </div>
+
+      <mat-card-title
+        >{{ note?.title }} <br />
+        <h3 class="subheading">{{ formattedReminderDate }}</h3>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div>
+        <p class="note-content">{{ note?.content }}</p>
+      </div>
+      <button class="category-btn">
+        {{ note?.category }}
+      </button>
+    </mat-card-content>
+    <mat-card-actions
+      *ngIf="displayIcons"
+      class="note-card-actions"
+      [ngClass]="{ show: showActions() }"
+    >
+      <button mat-icon-button (click)="addComment(note)">
+        <mat-icon>comment</mat-icon>
+      </button>
+      <button mat-icon-button (click)="edit(note)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)=" delete(note)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button (click)="setReminder(note)">
+        <mat-icon>notifications</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

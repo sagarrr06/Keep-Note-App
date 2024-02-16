@@ -1,0 +1,40 @@
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 2rem 0;
+  font-weight: 500;
+}
+
+.fName,
+.pass,
+.age,
+.city {
+  margin-right: 2rem;
+}
+
+.email,
+.street,
+.zip {
+  width: 27rem;
+}
+
+.gender {
+  margin-right: 2rem;
+}
+mat-radio-button {
+  margin-right: 1rem;
+}
+.row4 {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  margin-left: 7rem;
+}
+
+.reset {
+  margin-right: 2rem;
+}

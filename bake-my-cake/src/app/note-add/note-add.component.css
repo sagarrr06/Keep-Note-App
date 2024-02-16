@@ -1,0 +1,38 @@
+.input-container {
+  text-align: center;
+  position: relative;
+}
+
+#note-input {
+  background-color: white;
+  text-align: left;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px black;
+  width: 25%;
+  display: inline-block;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.toggleAddNote {
+  position: fixed;
+  bottom: 2rem; /* Distance from the bottom */
+  right: 2rem; /* Distance from the right */
+  background-color: #1a4aa3;
+  color: white;
+  width: 3.5rem; /* Set a specific width and height for a circular button */
+  height: 3.5rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(0, 0, 0) !important;
+}
+
+
+mat-form-field{
+  width: 100%;
+}
+
+
+.radio-btn{
+  margin-right: 0.5rem;
+}

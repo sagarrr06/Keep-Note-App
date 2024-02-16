@@ -1,0 +1,15 @@
+<div class="search">
+  <mat-form-field appearance="fill" class="search-box">
+    <mat-label>Search Note</mat-label>
+    <input matInput class="search-input" type="text" [(ngModel)]="searchText" />
+  </mat-form-field>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with search icon"
+    (click)="searchNote()"
+    type="button"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
